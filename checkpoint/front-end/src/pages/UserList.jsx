@@ -22,10 +22,10 @@ const UserList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="text-white bg-neutral-800 font-mono ">
       <Header />
-      <h2>
-        Coup de coeur <span>💖</span>
+      <h2 className="text-center font-mono ">
+        I love myself so much <span>💖</span>
       </h2>
       <div className="result">
         {listData.length > 0 ? (

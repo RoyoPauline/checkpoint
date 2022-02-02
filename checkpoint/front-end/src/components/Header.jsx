@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <div>
-           <nav>
+           <nav className="flex justify-evenly items-center h-16 text-white relative font-mono z-0 mt-2">
                <Link to='/'>
                    <span className="text-white">
                        Accueil

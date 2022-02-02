@@ -17,25 +17,26 @@ const Form = () => {
 
   return (
     <div>
-      <div>
+      <div className="items-center">
         <form>
           <input
             type="text"
-            placeholder="Entrez le titre d'un film"
+            placeholder="Ok you can search"
             id="search-input"
-            
+            className="justify-items-center appearance-none block bg-white text-gray-900 bg-opacity-25 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none"
             onChange={(e) => setSearch(e.target.value)}
           />
           <input type="submit" value="Rechercher" />
         </form>
 
         <div>
-          <div id="goodToBad" onClick={() => setSortGoodBad("goodToBad")}>
+          <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"id="goodToBad" onClick={() => setSortGoodBad("goodToBad")}>
             Top<span>➜</span>
-          </div>
-          <div id="badToGood" onClick={() => setSortGoodBad("badToGood")}>
+          </button>
+
+          <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" id="badToGood" onClick={() => setSortGoodBad("badToGood")}>
             Flop<span>➜</span>
-          </div>
+          </button>
         </div>
       </div>
       <div className="result">

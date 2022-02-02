@@ -94,13 +94,13 @@ const Card = ({ movie }) => {
   };
 
   return (
-    <div>
-       <div>
+    <div className ="flex min-w-260 max-w-280 h-620 bg-neutral-800 rounded-md overflow-hidden relative px-20 m-5">
+       <div className="bg-image w-full min-h-screen gap-3 py-5">
       <img
         src={
           movie.poster_path
             ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
-            : ""
+            : "https://fr.web.img4.acsta.net/pictures/15/07/27/15/04/271855.jpg"
         }
         alt="affiche film"
       />
@@ -125,11 +125,11 @@ const Card = ({ movie }) => {
       <p>{movie.overview}</p>
 
       {movie.genre_ids ? (
-        <button onClick={() => addStorage()}>
+        <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={() => addStorage()}>
           Ajouter aux coups de coeur
         </button>
       ) : (
-        <button
+        <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
           
           onClick={() => {
             deleteStorage();

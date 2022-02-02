@@ -1,9 +1,11 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const Profile = () => {
     return (
-        <div>
+        <div className="text-white bg-neutral-800 font-mono ">
             MON PROFIL
+            <Header />
         </div>
     );
 };
