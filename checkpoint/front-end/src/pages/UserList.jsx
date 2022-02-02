@@ -36,11 +36,9 @@ const UserList = () => {
             </div>
             <div>
                 <h3>Mes informations : </h3>
-        
-                <h4>Mon nombre de coup de coeur :</h4>
-                <h5>Ma ville</h5>
-
-
+                <h4>Prénom :{user.firstname}</h4>
+                <h4>Nom : {user.lastname}</h4>
+                <h4>Date de naissance : {user.dateOfBirth}</h4>
             </div>
             </section>
          </div>
