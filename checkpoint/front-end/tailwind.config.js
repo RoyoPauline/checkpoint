@@ -1,11 +1,7 @@
 module.exports = {
-  mode: "jit",
-  content: [],
-  darkMode: false,
-  purge: ["./public//*.html", "./src//*.{js,jsx,ts,tsx,vue}"],
+  content: ["./index.html", "./src/*/.{vue,js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      sigmar: ["Sigmar One", "cursive"],
-    },
+    extend: {},
+  },
   plugins: [],
-}}
+};
