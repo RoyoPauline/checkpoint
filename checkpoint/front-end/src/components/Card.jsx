@@ -94,9 +94,10 @@ const Card = ({ movie }) => {
   };
 
   return (
-    <div className ="flex min-w-260 max-w-280 h-620 bg-neutral-800 rounded-md overflow-hidden relative px-20 m-5">
-       <div className="bg-image w-full min-h-screen gap-3 py-5">
-      <img
+    <div className ="flex min-w-260 max-w-280 h-200 bg-neutral-800 overflow-hidden relative px-20 m-5">
+       <div className="bg-neutral-700 hover:bg-teal-900 rounded-md text-center border-solid border-2 border-teal-700">
+         
+      <img className="w-full h-70"
         src={
           movie.poster_path
             ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
@@ -104,9 +105,11 @@ const Card = ({ movie }) => {
         }
         alt="affiche film"
       />
-      <h2>{movie.title}</h2>
+     
+      <div className="">
+      <h2 className="text-lg">{movie.title}</h2>
       {movie.release_date ? (
-        <h5>Sorti le : {dateFormater(movie.release_date)}</h5>
+        <h5 className="underline">Sorti le : {dateFormater(movie.release_date)}</h5>
       ) : (
         ""
       )}
@@ -121,7 +124,7 @@ const Card = ({ movie }) => {
               <li key={index}>{genre.name}</li>
             ))}
       </ul>
-      {movie.overview ? <h3>Synopsis</h3> : ""}
+      {movie.overview ? <h3 className="underline">Synopsis</h3> : ""}
       <p>{movie.overview}</p>
 
       {movie.genre_ids ? (
@@ -139,6 +142,7 @@ const Card = ({ movie }) => {
           Supprimer de la liste
         </button>
       )}
+      </div>
       </div>
     </div>
   );

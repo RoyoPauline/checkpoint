@@ -9,14 +9,9 @@ const Header = () => {
                        Accueil
                    </span>
                </Link>
-               <Link to='/profile'>
-                   <span>
-                       Mon profil
-                   </span>
-               </Link>
                <Link to='/userlist'>
                    <span>
-                       Mes coups de coeur
+                       Mon profil
                    </span>
                </Link>
            </nav>

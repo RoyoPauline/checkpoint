@@ -17,16 +17,16 @@ const Form = () => {
 
   return (
     <div>
-      <div className="items-center">
-        <form>
+      <div className="flex flex-col items-center text-center">
+        <form className="items-center">
           <input
             type="text"
             placeholder="Ok you can search"
             id="search-input"
-            className="justify-items-center appearance-none block bg-white text-gray-900 bg-opacity-25 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none"
+            className="appearance-none block bg-white text-gray-900 bg-opacity-25 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none"
             onChange={(e) => setSearch(e.target.value)}
           />
-          <input type="submit" value="Rechercher" />
+          <input type="submit" value="Rechercher" className=""/>
         </form>
 
         <div>
@@ -39,7 +39,7 @@ const Form = () => {
           </button>
         </div>
       </div>
-      <div className="result">
+      <div className="result grid grid-cols-3">
         {moviesData
           .slice(0, 12)
           .sort((a, b) => {
