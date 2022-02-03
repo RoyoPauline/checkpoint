@@ -40,7 +40,7 @@ const UserList = ({user}) => {
 
         <section className="w-full mx-auto px-4 sm:px-6 lg:px-32 py-12 border-4 border-teal-700 shadow-xl mt-6 shadow-2xl">
           <h2 className="text-center pb-12 w-full mb-3 pb-3 border-b border-1 border-teal-700 shadow-2xl">
-            Mes coups de coeur de {user.pseudo} <span>🤍</span>
+            Les coups de coeur de {user.pseudo} <span>🤍</span>
           </h2>
           <div className="result grid grid-cols-3">
             {listData.length > 0 ? (

@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const Form = () => {
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState("Gérard");
+  const [search, setSearch] = useState("Depardieu");
   const [sortGoodBad, setSortGoodBad] = useState(null);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Form = () => {
             type="text"
             placeholder="Pfff bah cherche"
             id="search-input"
-            className="appearance-none block bg-white text-gray-900 bg-opacity-25 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none mb-4"
+            className="appearance-none block bg-white text-white bg-opacity-25 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none mb-4"
             onChange={(e) => setSearch(e.target.value)}
           />
           <input type="submit" value="Rechercher" className=""/>

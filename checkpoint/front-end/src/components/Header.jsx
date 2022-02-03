@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div>
-      <nav className="flex justify-evenly items-center h-16 text-white relative font-mono z-0 mt-2 hover:text-steal-700">
+      <nav className="flex justify-evenly items-center h-16 text-white relative font-mono z-0 mt-2">
         <Link to="/home">
-          <span className="text-white ">Accueil</span>
+          <span className="text-white hover:bg-steal-700">Accueil</span>
         </Link>
 
         <Link to="/userlist">
