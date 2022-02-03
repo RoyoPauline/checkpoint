@@ -4,11 +4,11 @@ import Card from "./Card";
 
 const Form = () => {
   const [moviesData, setMoviesData] = useState([]);
-  const [search, setSearch] = useState("Pauline");
+  const [search, setSearch] = useState("Gérard");
   const [sortGoodBad, setSortGoodBad] = useState(null);
 
   useEffect(() => {
-    axios
+              axios
       .get(
         `https://api.themoviedb.org/3/search/movie?api_key=ed82f4c18f2964e75117c2dc65e2161d&query=${search}&language=fr-FR`
       )
@@ -19,11 +19,12 @@ const Form = () => {
     <div>
       <div className="flex flex-col items-center text-center">
         <form className="items-center">
+        
           <input
             type="text"
-            placeholder="Ok you can search"
+            placeholder="Pfff bah cherche"
             id="search-input"
-            className="appearance-none block bg-white text-gray-900 bg-opacity-25 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none"
+            className="appearance-none block bg-white text-gray-900 bg-opacity-25 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none mb-4"
             onChange={(e) => setSearch(e.target.value)}
           />
           <input type="submit" value="Rechercher" className=""/>
@@ -39,7 +40,7 @@ const Form = () => {
           </button>
         </div>
       </div>
-      <div className="result grid grid-cols-3">
+      <div className="result grid grid-cols-1 lg:grid-cols-3 md:break-before-column">
         {moviesData
           .slice(0, 12)
           .sort((a, b) => {

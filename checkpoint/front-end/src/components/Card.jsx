@@ -75,74 +75,81 @@ const Card = ({ movie }) => {
   };
 
   const addStorage = () => {
-    let storedData = window.localStorage.movies
-      ? window.localStorage.movies.split(",")
+    let storedData = window.sessionStorage.movies
+      ? window.sessionStorage.movies.split(",")
       : [];
 
     if (!storedData.includes(movie.id.toString())) {
       storedData.push(movie.id);
-      window.localStorage.movies = storedData;
+      window.sessionStorage.movies = storedData;
     }
   };
 
   const deleteStorage = () => {
-    let storedData = window.localStorage.movies.split(",");
+    let storedData = window.sessionStorage.movies.split(",");
 
     let newData = storedData.filter((id) => id != movie.id);
 
-    window.localStorage.movies = newData;
+    window.sessionStorage.movies = newData;
   };
 
   return (
-    <div className ="flex min-w-260 max-w-280 h-200 bg-neutral-800 overflow-hidden relative px-20 m-5">
-       <div className="bg-neutral-700 hover:bg-teal-900 rounded-md text-center border-solid border-2 border-teal-700">
-         
-      <img className="w-full h-70"
-        src={
-          movie.poster_path
-            ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
-            : "https://fr.web.img4.acsta.net/pictures/15/07/27/15/04/271855.jpg"
-        }
-        alt="affiche film"
-      />
-     
-      <div className="">
-      <h2 className="text-lg">{movie.title}</h2>
-      {movie.release_date ? (
-        <h5 className="underline">Sorti le : {dateFormater(movie.release_date)}</h5>
-      ) : (
-        ""
-      )}
-      <h4>
-        {movie.vote_average}/10 <span>⭐</span>
-      </h4>
+    <div className="flex min-w-260 max-w-280 h-200 bg-neutral-800 overflow-hidden relative px-20 m-5 hover:scale-200">
+      <div className="bg-neutral-700 hover:bg-teal-900 rounded-md text-center border-solid border-2 border-teal-700 box-content h-100 w-100 p-4 border-4 ">
+        <img
+          className="w-full h-70"
+          src={
+            movie.poster_path
+              ? "https://image.tmdb.org/t/p/w500" + movie.poster_path
+              : "https://fr.web.img4.acsta.net/pictures/15/07/27/15/04/271855.jpg"
+          }
+          alt="affiche film"
+        />
 
-      <ul>
-        {movie.genre_ids
-          ? genreFinder()
-          : movie.genres.map((genre, index) => (
-              <li key={index}>{genre.name}</li>
-            ))}
-      </ul>
-      {movie.overview ? <h3 className="underline">Synopsis</h3> : ""}
-      <p>{movie.overview}</p>
+        <div className="">
+          <h2 className="text-lg">{movie.title}</h2>
+          {movie.release_date ? (
+            <h5 className="underline">
+              Sorti le : {dateFormater(movie.release_date)}
+            </h5>
+          ) : (
+            ""
+          )}
+          <h4>
+            {movie.vote_average}/10 <span>⭐</span>
+          </h4>
 
-      {movie.genre_ids ? (
-        <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={() => addStorage()}>
-          Ajouter aux coups de coeur
-        </button>
-      ) : (
-        <button type="button" className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-          
-          onClick={() => {
-            deleteStorage();
-            window.location.reload();
-          }}
-        >
-          Supprimer de la liste
-        </button>
-      )}
-      </div>
+          <ul>
+            {movie.genre_ids
+              ? genreFinder()
+              : movie.genres.map((genre, index) => (
+                  <li key={index}>{genre.name}</li>
+                ))}
+          </ul>
+          {movie.overview ? <h3 className="underline">Synopsis</h3> : ""}
+          <p>{movie.overview}</p>
+
+          {movie.genre_ids ? (
+            <button
+              type="button"
+              className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              onClick={() => addStorage() }
+            >
+              Ajouter aux coups de coeur
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="text-white bg-gradient-to-r from-teal-400 via-teal-500 to-teal-600 hover:bg-gradient-to-br focus:ring-4 focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              onClick={() => {
+                deleteStorage();
+                window.location.reload();
+              }}
+            >
+              Supprimer de la liste
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
